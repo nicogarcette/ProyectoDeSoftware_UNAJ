@@ -10,5 +10,7 @@ namespace NgCinema.Domain.Entities
     {
         public int IdGenre { get; set; }
         public string Name { get; set; }
+
+        public IEnumerable<Movie> Movies { get; set; }
     }
 }

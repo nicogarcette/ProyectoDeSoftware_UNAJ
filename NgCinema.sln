@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9FC01001-5F35-4E01-8AAD-8C8D228A0D02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgCinema.Domain", "NgCinema.Domain\NgCinema.Domain.csproj", "{9C0A6A65-29D4-4DD1-B477-1E5D31E90E0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Domain", "NgCinema.Domain\NgCinema.Domain.csproj", "{9C0A6A65-29D4-4DD1-B477-1E5D31E90E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgCinema.Application", "NgCinema.Application\NgCinema.Application.csproj", "{B93C9C3A-341C-450F-B5D5-25E3F229A213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Application", "NgCinema.Application\NgCinema.Application.csproj", "{B93C9C3A-341C-450F-B5D5-25E3F229A213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgCinema.Infraestructure", "NgCinema.Infraestructure\NgCinema.Infraestructure.csproj", "{02DA215D-AE4C-49CA-AA8F-F0540D29897D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Infraestructure", "NgCinema.Infraestructure\NgCinema.Infraestructure.csproj", "{02DA215D-AE4C-49CA-AA8F-F0540D29897D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgCinema.ConsoleApp", "NgCinema.AppConsole\NgCinema.ConsoleApp.csproj", "{DDA7A8D1-E007-4631-958A-16BC73797900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.ConsoleApp", "NgCinema.AppConsole\NgCinema.ConsoleApp.csproj", "{DDA7A8D1-E007-4631-958A-16BC73797900}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

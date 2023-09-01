@@ -11,5 +11,7 @@ namespace NgCinema.Domain.Entities
         public int IdTicket { get; set; }
         public int IdFunction { get; set; }
         public string User { get; set; }
+
+        public Function Function { get; set; }
     }
 }
