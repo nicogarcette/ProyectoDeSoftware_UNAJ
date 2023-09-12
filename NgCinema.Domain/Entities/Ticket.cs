@@ -8,10 +8,9 @@ namespace NgCinema.Domain.Entities
 {
     public class Ticket
     {
-        public int IdTicket { get; set; }
+        public Guid IdTicket { get; set; }
         public int IdFunction { get; set; }
         public string User { get; set; }
-
         public Function Function { get; set; }
     }
 }

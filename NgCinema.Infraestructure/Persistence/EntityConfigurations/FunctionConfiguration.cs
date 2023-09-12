@@ -13,6 +13,7 @@ namespace NgCinema.Infraestructure.Persistence.EntityConfigurations
             builder.HasKey(f => f.IdFuntion);
             builder.Property(f => f.IdFuntion).ValueGeneratedOnAdd();
             builder.Property(f => f.Date).IsRequired();
+            builder.Property(f => f.Date).HasColumnType("date");
             builder.Property(f => f.Time).IsRequired();
 
             builder.HasOne<Movie>(f => f.Movie)

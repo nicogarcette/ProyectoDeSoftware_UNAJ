@@ -11,7 +11,6 @@ namespace NgCinema.Infraestructure.Persistence.EntityConfigurations
             builder.ToTable("Tickets");
 
             builder.HasKey(t => t.IdTicket);
-            builder.Property(t => t.IdTicket).ValueGeneratedOnAdd();
             builder.Property(t => t.User).HasMaxLength(50).IsRequired();
 
             builder.HasOne<Function>(t => t.Function)

@@ -31,7 +31,7 @@ namespace NgCinema.Infraestructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdFuntion"));
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("IdMovie")
                         .HasColumnType("int");
@@ -39,8 +39,8 @@ namespace NgCinema.Infraestructure.Migrations
                     b.Property<int>("IdRoom")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("Time")
+                        .HasColumnType("time");
 
                     b.HasKey("IdFuntion");
 
@@ -160,180 +160,180 @@ namespace NgCinema.Infraestructure.Migrations
                         {
                             IdMovie = 1,
                             IdGenre = 8,
-                            Poster = "BohemianRhapsody.png",
+                            Poster = "https://m.media-amazon.com/images/M/MV5BMTA2NDc3Njg5NDVeQTJeQWpwZ15BbWU4MDc1NDcxNTUz._V1_.jpg",
                             Title = "Bohemian Rhapsody",
-                            Trailer = "BohemianRhapsody.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=mP0VHJYFOAU",
                             synopsis = "El joven Farrokh, Freddie, se ofrece como cantante de la banda al enterarse de que se han quedado sin vocalista. Ninguno de ellos se imaginaba por aquel entonces que se convertirían en los mismísimos Queen."
                         },
                         new
                         {
                             IdMovie = 2,
                             IdGenre = 1,
-                            Poster = "HarryPotter.png",
+                            Poster = "https://es.web.img3.acsta.net/medias/nmedia/18/67/05/06/19138964.jpg",
                             Title = "Harry Potter y El misterio del príncipe",
-                            Trailer = "TrailerHarryPotter.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=NaM7nKvX4Es",
                             synopsis = "Sexta entrega de la saga del joven mago, en la que Harry descubre un poderoso libro y, mientras trata de descubrir sus orígenes, colabora con Dumbledore en la búsqueda de una serie de objetos mágicos que ayudarán en la destrucción de Lord Voldemort."
                         },
                         new
                         {
                             IdMovie = 3,
                             IdGenre = 7,
-                            Poster = "Cars.png",
+                            Poster = "https://image.tmdb.org/t/p/original/lgBe9KD6DoLyQP28JZ6fSUGK8j0.jpg",
                             Title = "Cars",
-                            Trailer = "Cars.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=SbXIj2T-_uk",
                             synopsis = "El aspirante a campeón de carreras Rayo McQueen parece que está a punto de conseguir el éxito. Su actitud arrogante se desvanece cuando llega a una pequeña comunidad olvidada que le enseña las cosas importantes de la vida que había olvidado."
                         },
                         new
                         {
                             IdMovie = 4,
                             IdGenre = 1,
-                            Poster = "Rocky2.png",
+                            Poster = "https://i.pinimg.com/originals/1f/00/55/1f0055758a155eb4054353a76a262e8b.jpg",
                             Title = "Rocky 2",
-                            Trailer = "Rocky.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=zAtnLcXEZ_E",
                             synopsis = "Rocky ha colgado los guantes de boxeo. Sin embargo, acepta la oferta de revancha de Apollo para una segunda pelea. Reticente, acepta cuando éste le llama cobarde, se teme que la pelea pueda acabar con el ya retirado Rocky."
                         },
                         new
                         {
                             IdMovie = 5,
                             IdGenre = 7,
-                            Poster = "ToyStory3.png",
+                            Poster = "https://lumiere-a.akamaihd.net/v1/images/p_toystory3_19639_3c584e1f.jpeg",
                             Title = "Toy Story 3",
-                            Trailer = "ToyStory3.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=JcpWXaA2qeg",
                             synopsis = "Cuando su dueño Andy comienza la universidad Woody, Buzz y el resto de sus amigos juguetes comienzan a preocuparse por su incierto futuro. Todos acaban en una guardería donde comenzarán una serie de trepidantes y divertidas aventuras."
                         },
                         new
                         {
                             IdMovie = 6,
                             IdGenre = 5,
-                            Poster = "Oppenheimer.png",
+                            Poster = "https://cloudfront-us-east-1.images.arcpublishing.com/copesa/S4367N7H5VAYTB225C4GCG2ZHI.jpeg",
                             Title = "Oppenheimer",
-                            Trailer = "Oppenheimer.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=MVvGSBKV504",
                             synopsis = "El físico J Robert Oppenheimer trabaja con un equipo de científicos durante el Proyecto Manhattan, que condujo al desarrollo de la bomba atómica."
                         },
                         new
                         {
                             IdMovie = 7,
                             IdGenre = 3,
-                            Poster = "Interstellar.png",
+                            Poster = "https://i.ebayimg.com/images/g/B44AAOSwanViGSRR/s-l1200.webp",
                             Title = "Interstellar",
-                            Trailer = "Interstellar.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=zSWdZVtXT7E",
                             synopsis = "Un grupo de científicos y exploradores, encabezados por Cooper, realizan un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra.Este grupo necesita encontrar un planeta más que garantice el futuro humano"
                         },
                         new
                         {
                             IdMovie = 8,
                             IdGenre = 10,
-                            Poster = "IT.png",
+                            Poster = "https://i.ebayimg.com/images/g/sz8AAOSwcgNZHz-O/s-l1200.webp",
                             Title = "IT",
-                            Trailer = "IT.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=xKJmEC5ieOk",
                             synopsis = "Varios niños de una pequeña ciudad del estado de Maine se alían para combatir a una entidad diabólica que adopta la forma de un payaso y desde hace mucho tiempo emerge cada 27 años para saciarse de sangre infantil."
                         },
                         new
                         {
                             IdMovie = 9,
                             IdGenre = 1,
-                            Poster = "spiderman.png",
+                            Poster = "https://image.tmdb.org/t/p/original/vSsOo0GwXP2zDZP4EyXmHejJ3H8.jpg",
                             Title = "Spiderman 1",
-                            Trailer = "spiderman.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=t06RUxPbp_c",
                             synopsis = "Al sufrir la picadura de una araña genéticamente modificada, un estudiante de secundaria tímido y torpe adquiere increíbles capacidades como arácnido. Pronto comprenderá que su misión es utilizarlas para luchar contra el mal y defender a sus vecinos."
                         },
                         new
                         {
                             IdMovie = 10,
                             IdGenre = 6,
-                            Poster = "RedSocial.png",
+                            Poster = "https://www.cubahora.cu/uploads/resources/images/2019/11/26/the-social-network.jpg",
                             Title = "Red social",
-                            Trailer = "RedSocial.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=K1JWiaIY-Xg",
                             synopsis = "La historia de los jóvenes fundadores de la popular red social Facebook, especialmente de su creador más conocido, Mark Zuckerberg. Su leyenda reza: 'No se hacen 500 millones de amigos sin hacer unos cuantos enemigos'."
                         },
                         new
                         {
                             IdMovie = 11,
                             IdGenre = 4,
-                            Poster = "BuenosVecinos.png",
+                            Poster = "https://pics.filmaffinity.com/Malditos_vecinos-933128749-large.jpg",
                             Title = "Buenos Vecinos",
-                            Trailer = "BuenosVecinos.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=iNMj0dc1og4",
                             synopsis = "Mac y Kelly acaban de tener una niña adorable y se han comprado una preciosa casa en las afueras. Pero estos exjuerguistas descubren de pronto que sus nuevos vecinos son los miembros de la fraternidad Delta Psi Beta, con el presidente Teddy Sanders."
                         },
                         new
                         {
                             IdMovie = 12,
                             IdGenre = 1,
-                            Poster = "Batman.png",
+                            Poster = "https://i.ibb.co/d0D2tQm/batman.png",
                             Title = "Batman: el caballero de la noche",
-                            Trailer = "Batman.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=emYLYfuZAbU",
                             synopsis = "Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos."
                         },
                         new
                         {
                             IdMovie = 13,
                             IdGenre = 9,
-                            Poster = "IslaSiniestra.png",
-                            Title = "La isla siniestra",
-                            Trailer = "IslaSiniestra.mp4",
+                            Poster = "https://musicart.xboxlive.com/7/7e811100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
+                            Title = "La Isla Siniestra",
+                            Trailer = "https://www.youtube.com/watch?v=95z6iWCjEgc",
                             synopsis = "Los agentes son enviados a una isla del puerto de Boston para investigar la desaparición de una asesina en el hospital psiquiátrico, un centro penitenciario para criminales. El centro guarda secretos y la isla esconde algo más peligroso que los pacientes."
                         },
                         new
                         {
                             IdMovie = 14,
                             IdGenre = 6,
-                            Poster = "SecretoDeSusOjos.png",
+                            Poster = "https://pics.filmaffinity.com/El_secreto_de_sus_ojos-483213496-large.jpg",
                             Title = "El secreto de sus ojos",
-                            Trailer = "SecretoDeSusOjos.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=GqdLlefQ8gU",
                             synopsis = "Benjamín Espósito es un oficial de un Juzgado de Instrucción jubilado. Su sueño es escribir una novela. intentará dar solución a un caso viejo, del cual fue testigo y protagonista. "
                         },
                         new
                         {
                             IdMovie = 15,
                             IdGenre = 5,
-                            Poster = "soldadoRyan.png",
+                            Poster = "https://es.web.img3.acsta.net/pictures/14/03/05/09/42/163621.jpg",
                             Title = "Rescatando al soldado Ryan",
-                            Trailer = "soldadoRyan.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=TAyhMtyup3o",
                             synopsis = "Después de desembarcar en Normandía, en plena Segunda Guerra Mundial, unos soldados norteamericanos deben arriesgar sus vidas para salvar al soldado James Ryan, cuyos tres hermanos han muerto en la guerra."
                         },
                         new
                         {
                             IdMovie = 16,
                             IdGenre = 7,
-                            Poster = "sherk.png",
+                            Poster = "https://elfinalde.s3-accelerate.amazonaws.com/2017/11/rD8SvOTCCJ2VIpIV7GUwUKD1Kzc.jpg",
                             Title = "Sherk 2",
-                            Trailer = "sherk.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=xBxVgh-kgAI",
                             synopsis = "Shrek, nuestro ogro favorito, debe enfrentarse al mayor de los problemas que se podía imaginar: conocer a sus suegros."
                         },
                         new
                         {
                             IdMovie = 17,
                             IdGenre = 3,
-                            Poster = " StarWars.png",
+                            Poster = "https://i.ibb.co/dMfq8Xr/start.png",
                             Title = "Star Wars: Episodio IV",
-                            Trailer = " StarWars.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=beAH5vea99k",
                             synopsis = "Princesa Leia es capturada por el temible DarthVader. Leia consigue introducir un mensaje en su robot. Tras aterrizar son capturados y vendidos al joven Luke Skywalker, quien descubrirá el mensaje oculto que va destinado a Obi Wan Kenobi, maestro Jedi."
                         },
                         new
                         {
                             IdMovie = 18,
                             IdGenre = 2,
-                            Poster = "ForrestGump.png",
+                            Poster = "https://m.media-amazon.com/im",
                             Title = "Forrest Gump",
-                            Trailer = "ForrestGump.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=Cyh1LpxnaxI",
                             synopsis = "Forrest Gump espera al autobús. Mientras éste tarda en llegar, el joven cuenta su vida . Aunque sufre un pequeño retraso mental, esto no le impide hacer cosas maravillosas. el toma partido en los eventos más importantes de la historia de los EEUU."
                         },
                         new
                         {
                             IdMovie = 19,
                             IdGenre = 5,
-                            Poster = "ElLoboWallStreet.png",
-                            Title = "El lobo de Wall Street",
-                            Trailer = "WallStreet.mp4",
+                            Poster = "https://es.web.img3.acsta.net/pictures/210/615/21061596_20131129121836144.jpg",
+                            Title = "El Lobo de Wall Street",
+                            Trailer = "https://www.youtube.com/watch?v=PaAvUOXUohk",
                             synopsis = "La historia del corredor de bolsa neoyorquino Jordan Belfort, quien, con poco más de veinte años, fue apodado 'el lobo de Wall Street' por su enorme éxito y fortuna como fundador de la agencia bursátil Stratton Oakmont."
                         },
                         new
                         {
                             IdMovie = 20,
                             IdGenre = 1,
-                            Poster = "ElClubDeLaPelea.png",
+                            Poster = "https://es.web.img2.acsta.net/r_1280_720/img/23/b7/23b757ce995171ae05ba7449c67a47dc.jpg",
                             Title = "El club de la pelea",
-                            Trailer = "ElClubDeLaPelea.mp4",
+                            Trailer = "https://www.youtube.com/watch?v=YD5BeUWgsSM",
                             synopsis = "Un empleado de oficina insomne, harto de su vida, se cruza con un vendedor peculiar. Ambos crean un club de lucha clandestino como forma de terapia y, poco a poco, la organización crece y sus objetivos toman otro rumbo."
                         });
                 });
@@ -381,11 +381,9 @@ namespace NgCinema.Infraestructure.Migrations
 
             modelBuilder.Entity("NgCinema.Domain.Entities.Ticket", b =>
                 {
-                    b.Property<int>("IdTicket")
+                    b.Property<Guid>("IdTicket")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTicket"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("IdFunction")
                         .HasColumnType("int");

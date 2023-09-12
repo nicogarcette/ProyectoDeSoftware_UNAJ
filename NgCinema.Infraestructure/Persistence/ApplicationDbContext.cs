@@ -8,7 +8,7 @@ namespace NgCinema.Infraestructure.Persistence
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Server=NGPC-22\SQLEXPRESS;Database=DbNgCinema;Trusted_Connection=true;Encrypt=False;TrustServerCertificate=False");
+            options.UseSqlServer(@"Server=.;Database=DbNgCinema;Trusted_Connection=true;Encrypt=False;TrustServerCertificate=False");
         }
 
         public DbSet<Movie> Movies { get; set; }
