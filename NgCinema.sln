@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Application", "NgC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Infraestructure", "NgCinema.Infraestructure\NgCinema.Infraestructure.csproj", "{02DA215D-AE4C-49CA-AA8F-F0540D29897D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.ConsoleApp", "NgCinema.AppConsole\NgCinema.ConsoleApp.csproj", "{DDA7A8D1-E007-4631-958A-16BC73797900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgCinema.Presentation", "NgCinema.Presentation\NgCinema.Presentation.csproj", "{6B8EF470-D84C-4C68-8FAC-2D46430D9811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{02DA215D-AE4C-49CA-AA8F-F0540D29897D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02DA215D-AE4C-49CA-AA8F-F0540D29897D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DA215D-AE4C-49CA-AA8F-F0540D29897D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDA7A8D1-E007-4631-958A-16BC73797900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDA7A8D1-E007-4631-958A-16BC73797900}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDA7A8D1-E007-4631-958A-16BC73797900}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDA7A8D1-E007-4631-958A-16BC73797900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B8EF470-D84C-4C68-8FAC-2D46430D9811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8EF470-D84C-4C68-8FAC-2D46430D9811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8EF470-D84C-4C68-8FAC-2D46430D9811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8EF470-D84C-4C68-8FAC-2D46430D9811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +52,7 @@ Global
 		{9C0A6A65-29D4-4DD1-B477-1E5D31E90E0A} = {6DCA87C8-BCEB-4986-BE0E-9FB4C6789BE2}
 		{B93C9C3A-341C-450F-B5D5-25E3F229A213} = {6DCA87C8-BCEB-4986-BE0E-9FB4C6789BE2}
 		{02DA215D-AE4C-49CA-AA8F-F0540D29897D} = {304A3123-4641-43FC-AADD-66255DEB5A6B}
-		{DDA7A8D1-E007-4631-958A-16BC73797900} = {9FC01001-5F35-4E01-8AAD-8C8D228A0D02}
+		{6B8EF470-D84C-4C68-8FAC-2D46430D9811} = {9FC01001-5F35-4E01-8AAD-8C8D228A0D02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C5F5DAB-13EB-438D-B8A9-F4FF48D409AA}

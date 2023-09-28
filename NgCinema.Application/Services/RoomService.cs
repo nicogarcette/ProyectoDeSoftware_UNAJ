@@ -1,5 +1,4 @@
 ﻿using NgCinema.Application.DTOs;
-using NgCinema.Application.Exceptions;
 using NgCinema.Application.Interfaces.Querys;
 using NgCinema.Application.Interfaces.Services;
 using NgCinema.Domain.Entities;
@@ -18,24 +17,19 @@ namespace NgCinema.Application.Services
         public List<GetRoom> GetAllRooms()
         {
             List<GetRoom> result;
-            try
-            {
-               IEnumerable<Room> rooms = _roomQuery.GetRooms();
+           
+            IEnumerable<Room> rooms = _roomQuery.GetRooms();
 
-                result = rooms
-                        .Select(
-                        r=> new GetRoom()
-                        {
-                            IdRoom = r.IdRoom,
-                            Name = r.Name,
-                            Capacity = r.Capacity
-                        })
-                        .ToList();
-            }
-            catch(Exception)
-            {
-                throw new BussinesException("error en la consulta.");
-            }
+            result = rooms
+                    .Select(
+                    r=> new GetRoom()
+                    {
+                        IdRoom = r.IdRoom,
+                        Name = r.Name,
+                        Capacity = r.Capacity
+                    })
+                    .ToList();
+     
             return result;
         }
     }

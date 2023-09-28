@@ -5,7 +5,7 @@ namespace NgCinema.Application.Interfaces.Querys
     public interface IRoomQuery
     {
         IEnumerable<Room> GetRooms();
-        bool ExistRoom(int id);
+        Task<Room> GetRoomById(int id);
 
     }
 }

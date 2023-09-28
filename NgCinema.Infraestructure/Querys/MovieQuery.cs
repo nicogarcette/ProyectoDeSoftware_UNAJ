@@ -14,9 +14,16 @@ namespace NgCinema.Infraestructure.Querys
             _context = applicationDbContext;
         }
 
-        public bool ExistMovie(int id)
+        public Task<bool> ExistMovie(string movie)
         {
-            return _context.Movies.Any(m => m.IdMovie == id);
+            return _context.Movies.AnyAsync(m => m.Title == movie);
+        }
+
+        public async Task<Movie> GetMovieById(int id)
+        {
+            return _context.Movies.Include(m => m.Genre)
+                                    .Include(f => f.Functions).
+                                    FirstOrDefault(m => m.IdMovie == id);
         }
 
         public IEnumerable<Movie> GetMovies()

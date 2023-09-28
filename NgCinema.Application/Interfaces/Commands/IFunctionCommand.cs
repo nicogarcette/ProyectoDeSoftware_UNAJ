@@ -4,6 +4,7 @@ namespace NgCinema.Application.Interfaces.Command
 {
     public interface IFunctionCommand
     {
-        int InsertFunction(Function function);
+        Task<int> InsertFunction(Function function);
+        Task<int> DeleteFunction(Function function);
     }
 }

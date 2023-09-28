@@ -6,10 +6,16 @@ namespace NgCinema.Infraestructure.Persistence
 {
     public class ApplicationDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            options.UseSqlServer(@"Server=.;Database=DbNgCinema;Trusted_Connection=true;Encrypt=False;TrustServerCertificate=False");
+            
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //{
+        //    options.UseSqlServer(@"Server=.;Database=DbNgCinema;Trusted_Connection=true;Encrypt=False;TrustServerCertificate=False");
+        //}
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }

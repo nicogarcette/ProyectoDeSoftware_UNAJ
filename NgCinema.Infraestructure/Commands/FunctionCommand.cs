@@ -13,11 +13,18 @@ namespace NgCinema.Infraestructure.Commands
             _context = context;
         }
 
-        public int InsertFunction(Function function)
+
+        public async Task<int> InsertFunction(Function function)
         {
             _context.Functions.Add(function);
            
-            return _context.SaveChanges();
+            return await _context.SaveChangesAsync();
+        }
+        public async Task<int> DeleteFunction(Function function)
+        {
+            _context.Functions.Remove(function);
+
+            return await _context.SaveChangesAsync();
         }
     }
 }

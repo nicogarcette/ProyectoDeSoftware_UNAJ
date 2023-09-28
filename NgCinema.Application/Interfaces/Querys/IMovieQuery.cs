@@ -4,7 +4,8 @@ namespace NgCinema.Application.Interfaces.Querys
 {
     public interface IMovieQuery
     {
+        Task<Movie> GetMovieById(int id);
         IEnumerable<Movie> GetMovies();
-        bool ExistMovie(int id);
+        Task<bool> ExistMovie(string movie);
     }
 }

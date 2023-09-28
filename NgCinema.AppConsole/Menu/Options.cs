@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using NgCinema.Application.DTOs;
+using NgCinema.Application.DTOs.Function;
 using NgCinema.Application.Exceptions;
 using NgCinema.Application.Interfaces.Services;
 using NgCinema.ConsoleApp.Utilities;
@@ -18,33 +19,6 @@ namespace NgCinema.ConsoleApp.Menu
             _MovieService = movieService;
             _RoomService = roomService;
         }
-
-        public void Consult()
-        {
-            Console.WriteLine("\n1) filtrar por fecha.\n2) filtrar por pelicula.\n3) filtra por ambas.\n0) Regresar a menu.");
-            int opction = ValidData.AskForNumber("opcion",3);
-
-            switch(opction)
-            {
-                case 1:
-                    GetFunctionByDay();
-                    break;
-                case 2:
-                    GetFunctionByMovie();
-                    break;
-                case 3:
-                    GetFunctionMovieDay();
-                    break;
-                case 0:
-                    Console.WriteLine("\nVolviendo al menu...");
-                    break;
-                default:
-                    break;
-            }
-
-            Continue();
-        }
-
         public async void GetFunctionByDay()
         {
             List<GetFunction> result;
@@ -152,14 +126,14 @@ namespace NgCinema.ConsoleApp.Menu
                 IdMovie = idMovie,
                 IdRoom = idRoom,
                 Date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, day),
-                Time = new TimeSpan(hour, 0, 0),
+                //Time = new TimeSpan(hour, 0, 0),
             };
 
             bool result = false;
             string value = string.Empty;
             try
             {
-                result = _functionService.CreateFunction(function);
+                //result = _functionService.CreateFunction(function);
                 value = result ? "\nFuncion registrada correctamente\n" : "\nFuncion no registrada\n";
             }
             catch(BussinesException e)

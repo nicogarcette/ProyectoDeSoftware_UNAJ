@@ -13,9 +13,9 @@ namespace NgCinema.Infraestructure.Querys
             _context = context;
         }
 
-        public bool ExistRoom(int id)
+        public async Task<Room> GetRoomById(int id)
         {
-            return _context.Rooms.Any(r => r.IdRoom == id);
+            return  _context.Rooms.FirstOrDefault(r => r.IdRoom == id);
         }
 
         public IEnumerable<Room> GetRooms()

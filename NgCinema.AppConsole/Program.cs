@@ -14,7 +14,7 @@ internal class Program
     {
         #region InyectionDependecy
         var serviceProvider = new ServiceCollection()
-            .AddTransient<IFunctionService, FunctionServices>()
+            .AddTransient<IFunctionService, MovieServices>()
             .AddTransient<IMovieService, MovieService>()
             .AddTransient<IRoomService, RoomService>()
             .AddDbContext<ApplicationDbContext>()
