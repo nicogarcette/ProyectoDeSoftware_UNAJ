@@ -26,9 +26,9 @@ namespace NgCinema.Infraestructure.Querys
                                     FirstOrDefault(m => m.IdMovie == id);
         }
 
-        public IEnumerable<Movie> GetMovies()
+        public async Task<IEnumerable<Movie>> GetMovies()
         {
-            return _context.Movies.Include(m => m.Genre).ToList();
+            return await _context.Movies.Include(m => m.Genre).ToListAsync();
         }
     }
 }

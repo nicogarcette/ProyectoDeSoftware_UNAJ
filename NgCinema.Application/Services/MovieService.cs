@@ -21,33 +21,28 @@ namespace NgCinema.Application.Services
             _genreQuery = genreQuery;
         }
 
-        public List<GetMovie> GetAllMovies()
+        public async Task<List<GetMovie>> GetAllMovies()
         {
             List<GetMovie> result;
-            try
-            {
-                IEnumerable<Movie> list = _movieQuery.GetMovies();
+           
+            IEnumerable<Movie> list = await _movieQuery.GetMovies();
 
-                result = list
-                        .Select(
-                        m => new GetMovie()
+            result = list
+                    .Select(
+                    m => new GetMovie()
+                    {
+                        IdMovie = m.IdMovie,
+                        Poster = m.Poster,
+                        Trailer = m.Trailer,
+                        synopsis = m.synopsis,
+                        Title = m.Title,
+                        Genre = new GenreDto
                         {
-                            IdMovie = m.IdMovie,
-                            Poster = m.Poster,
-                            Trailer = m.Trailer,
-                            Title = m.Title,
-                            Genre = new GenreDto
-                            {
-                                Id = m.IdGenre,
-                                Name = m.Genre.Name,
-                            }
-                        })
-                        .ToList();
-            }
-            catch(Exception)
-            {
-                throw new BussinesException("error en la consulta.");
-            }
+                            Id = m.IdGenre,
+                            Name = m.Genre.Name,
+                        }
+                    })
+                    .ToList();
 
             return result;
         }

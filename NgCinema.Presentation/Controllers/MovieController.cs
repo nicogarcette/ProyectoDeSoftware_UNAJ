@@ -19,6 +19,18 @@ namespace NgCinema.Presentation.Controllers
         }
 
         [HttpGet]
+        [Route("Peliculas")]
+        [ProducesResponseType(typeof(GetMovie), 200)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(ErrorResponse), 404)]
+        public async Task<IActionResult> GetMovies()
+        {
+            List<GetMovie> value = await _movieService.GetAllMovies();
+
+            return Ok(value);
+        }
+
+        [HttpGet]
         [Route("Pelicula/{id}")]
         [ProducesResponseType(typeof(GetMovie), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
