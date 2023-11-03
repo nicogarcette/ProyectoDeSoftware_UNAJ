@@ -12,11 +12,6 @@ namespace NgCinema.Infraestructure.Persistence
             
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //{
-        //    options.UseSqlServer(@"Server=.;Database=DbNgCinema;Trusted_Connection=true;Encrypt=False;TrustServerCertificate=False");
-        //}
-
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Function> Functions { get; set; }
