@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    overflow-x: hidden;
+}
+
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+    background-color: #DBE2EF;
+}
+/* HEADER */
+.encabezado{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #06113C;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.logo{
+    font-family: 'Cutive Mono', monospace;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #DDDDDD ;
+    margin: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+
+}
+.logo:hover{
+    color: #DDDDDD;
+}
+
+.nav{
+    display:flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.lista{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+}
+
+li{
+    list-style: none;
+}
+
+.lis_item a{
+    text-decoration: none;
+    color: #DDDDDD;
+    padding: 5px;
+    font-size: 20px;
+    transition: color 0.5s;
+}
+.lis_item a:hover, .redes a:hover{
+    color: #B20600;
+}
+
+/* main */
+.cuerpo{
+    background-color: #DDDDDD;
+}
+.container-titulo{
+    text-align: center;
+    font-size: 22px;
+    color: #DDDDDD;
+    background-image: url("../img/fondoCine.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    position: relative;
+}
+.titulo{
+    position: relative;
+    right: 42rem;
+    top: 25rem;
+}
+
+#allcards{
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+}
+.card{
+    background-color: #EEEEEE;
+    width: 400px;
+    border-radius: 20px;
+    padding: 1rem 0;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 2.5rem;
+    
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+
+.card h2, .compra h2, .compra p{
+    text-align: center;
+    padding-bottom: 5px;
+}
+.p-size{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0;
+    margin-top: 5px;    
+}
+
+/* ----footer---- */
+.ft{
+    padding: 10px 0;
+
+}
+.pie{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+.redes a{
+    text-decoration: none;
+    padding: 5px;
+    color: #06113C;
+}
+.derechos{
+    padding:20px;
+    margin: auto ;
+    text-align: center;
+    max-width: 1200px;
+}
+.derechos p{
+    margin-top: 20px;
+}
+
+.derechos hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+span{
+    color: #B20600;
+    font-weight: bold;
+}
+
+/* login */
+.formu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    margin-left: 26rem;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    padding: 1rem;
+}
+.label{
+    display: flex;
+    flex-direction:column ;
+}
+.btn{
+    padding: 0.3rem 4rem;
+    margin: 1rem;
+    border: none;
+    background-color: #B20600;
+    color: #DDDDDD;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+input{
+    height: 2.5rem;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    color: #06113C;
+}
+
+.bienvenida{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#botones, #total{
+    display: flex;
+    justify-content: center;
+    margin:2rem auto ;
+}
+
+.modal-img{
+    width: 100%;
+}
+
+
+
+
+.form_input{
+    background:white;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    line-height: 50px;
+    padding:0 40px 0 10px ;
+    transition: .3s ease all;
+
+}
+.form_input:focus{
+    border: 1px solid #0075ff;
+    outline: none;
+    box-shadow: 2px 0px 40px rgba(99, 99, 99, 0.2);
+}
+
+.input-modal{
+    background-color: #EEEEEE;
+    margin: 1rem;
+}
+
+
+.checkout_card{
+    width: 30%; 
+}
+.card-pelicula{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 20px;
+    height: auto;
+    transition: 0.4s all linear;
+    width: 400px;
+}
+
+.card-pelicula:hover{
+    transform:scale(1.05) ;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+
+.form_btn{
+    height: 45px;
+    line-height: 45px;
+    border-radius: 5px;
+    padding: 0 15px;
+    background: #06113C;
+    color: #fff;
+    font-weight:500;
+    border: none;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+.form_btn:hover{
+    color: #B20600;
+}
+
+/* .product-img{
+    width: 90%;
+} */
+
+/* MOVIE */
+
+.main-pelicula{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-pelicula{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4rem;
+}
+.funcion{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #EEEEEE;
+    gap: 7rem;
+    transition: all 0.1s ease;
+}
+
+.funcion:hover{
+    background-color: #ffffff;
+    border-radius: 20px;
+
+}
+
+.content-funciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 3rem 0 3rem 0;
+    padding: .5rem;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.content-funciones div {
+    width: 100%;
+}
+
+.content-ticket{
+    margin: 9.7rem 0 4.6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-ticket{
+
+    width: 70%;
+}
+
+.title-cod{
+    text-align: center;
+
+}
+.trailer{
+    width: 51.25rem;
+    height: 32.18rem;    
+}
+::placeholder {
+    text-align: center; 
+}
+
+/* vista movile */
+@media screen and (max-width:768px){
+    /* estilo index*/
+    .container-titulo{
+        height: 275px;
+    }
+    .titulo{
+        right: 4rem;
+        top: 13rem;
+        margin-top: 4rem;
+    }
+    .encabezado{
+        height: 70px;
+    }
+   
+    .logo{
+        font-size: 1.4rem;
+        margin: 0.5rem;
+        text-align: start;
+    }
+    #allcards{
+        padding: 0px 2rem;
+
+    }
+    .card-img{
+        width: 100%;
+    }
+    .bienvenida{
+        padding-top: 2rem;
+    }
+    /* FIN index */    
+    /* card */
+
+    .checkout_contenido{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .checkout_card{
+        width: 80%; 
+        margin-bottom: 1rem;
+    }
+
+    .product-img{
+        width: 100%;
+    }
+    /* FIN CHECKOUT */
+
+
+    /* movies */
+    .content-pelicula{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trailer{
+        width: 23rem;
+        height:16rem;    
+    }
+
+    .content-funciones{
+        width: 95%;
+    }
+    .funcion{
+        width: 100%;
+        background-color: #EEEEEE;
+        gap: 0.5rem;
+        transition: all 0.1s ease;
+    }
+    .btn-comprar{
+        padding: 0.5rem;
+    } 
+
+    .formu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 330px;
+        margin-left: 0rem;
+        padding: 1rem;
+        gap: 0.5rem;
+        margin-left: 1rem;
+    }
+
+    .modal-footer {
+        justify-content: center;
+    }
+
+    .card-tickets{
+
+        width: 320px;
+    }
+
+    .card-pelicula{
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .checkout_card{
+        width: 40%;
+        margin-top: 2.5rem;
+    }
+    .card-img{
+        width: 300px;
+    }
+
+    /* movies */
+    .content-pelicula{
+        gap: 1rem;
+    }
+    .trailer{
+        width: 30rem;
+        height:20rem;    
+    }  
+}
+
+/* vista desktop */
+@media screen and (min-width:1200px){
+    /* index */
+    #allcards{
+        margin: 0 6rem;
+    }
+    .titulo{
+        padding-top: 10rem;
+        
+    }
+
+    .card-img{
+        width: 300px;
+    }
+    /* fin index */
+    .checkout_card{
+        margin-top: 1.5rem;
+    }
+}
+

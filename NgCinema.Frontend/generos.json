@@ -1,0 +1,14 @@
+[
+    {"id":1,"nombre":"Acción"},
+    {"id":2,"nombre":"Aventuras"},
+    {"id":3,"nombre":"Ciencia Ficción"},
+    {"id":4,"nombre":"Comedia"},
+    {"id":5,"nombre":"Documental"},
+    {"id":6,"nombre":"Drama"},
+    {"id":7,"nombre":"Fantasía"},
+    {"id":8,"nombre":"Musical"},
+    {"id":9,"nombre":"Suspenso"},
+    {"id":10,"nombre":"Terror"}
+]
+
+
