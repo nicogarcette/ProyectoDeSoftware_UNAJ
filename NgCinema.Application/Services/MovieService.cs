@@ -1,10 +1,9 @@
 ﻿using NgCinema.Application.DTOs;
-using NgCinema.Application.DTOs.Function;
-using NgCinema.Application.DTOs.Genre;
 using NgCinema.Application.Exceptions;
 using NgCinema.Application.Interfaces.Commands;
 using NgCinema.Application.Interfaces.Querys;
 using NgCinema.Application.Interfaces.Services;
+using NgCinema.Application.Mapper;
 using NgCinema.Domain.Entities;
 
 namespace NgCinema.Application.Services
@@ -14,7 +13,7 @@ namespace NgCinema.Application.Services
         private readonly IMovieQuery _movieQuery;
         private readonly IMovieCommand _movieCommand;
         private readonly IGenreQuery _genreQuery;
-        public MovieService(IMovieQuery movieQuery,IMovieCommand movieCommand, IGenreQuery genreQuery)
+        public MovieService(IMovieQuery movieQuery, IMovieCommand movieCommand, IGenreQuery genreQuery)
         {
             _movieQuery = movieQuery;
             _movieCommand = movieCommand;
@@ -24,25 +23,10 @@ namespace NgCinema.Application.Services
         public async Task<List<GetMovie>> GetAllMovies()
         {
             List<GetMovie> result;
-           
+
             IEnumerable<Movie> list = await _movieQuery.GetMovies();
 
-            result = list
-                    .Select(
-                    m => new GetMovie()
-                    {
-                        IdMovie = m.IdMovie,
-                        Poster = m.Poster,
-                        Trailer = m.Trailer,
-                        synopsis = m.synopsis,
-                        Title = m.Title,
-                        Genre = new GenreDto
-                        {
-                            Id = m.IdGenre,
-                            Name = m.Genre.Name,
-                        }
-                    })
-                    .ToList();
+            result = list.Select(m => m.Mapper()).ToList();
 
             return result;
         }
@@ -54,25 +38,7 @@ namespace NgCinema.Application.Services
             if(movie == null)
                 throw new NotFoundException("La pelicula no existe.");
 
-            GetMovie getMovie = new GetMovie()
-            {
-                IdMovie = movie.IdMovie,
-                Poster = movie.Poster,
-                Trailer = movie.Trailer,
-                Title = movie.Title,
-                synopsis = movie.synopsis,
-                Genre = new GenreDto
-                {
-                    Id = movie.IdGenre,
-                    Name = movie.Genre.Name,
-                },
-                functions = movie.Functions.Select(f => new FunctionDto
-                {
-                    IdFuntion = f.IdFuntion,
-                    Date = DateOnly.FromDateTime(f.Date),
-                    Time = TimeOnly.FromTimeSpan(f.Time)
-                }).ToList()
-            };
+            GetMovie getMovie = movie.Mapper();
 
             return getMovie;
         }
@@ -82,7 +48,7 @@ namespace NgCinema.Application.Services
             Movie movie = await _movieQuery.GetMovieById(id);
             if(movie == null)
                 throw new NotFoundException("La pelicula no existe.");
-            
+
             Genre genre = await _genreQuery.GetGenreById(updateMovie.IdGenre);
             if(genre == null)
                 throw new BussinesException("El genero ingresado no existe.");
@@ -91,30 +57,9 @@ namespace NgCinema.Application.Services
             if(existMovie)
                 throw new ConflictException("Ya existe una pelicula con ese nombre.");
 
-            bool update = await _movieCommand.UpdateMovie(movie,updateMovie) > 0;
+            bool update = await _movieCommand.UpdateMovie(movie, updateMovie) > 0;
 
-            if(!update)
-                return null;
-
-            GetMovie movieDto = new GetMovie()
-            {
-                IdMovie = id,
-                Poster = updateMovie.Poster,
-                Trailer = updateMovie.Trailer,
-                Title = updateMovie.Title,
-                synopsis = updateMovie.synopsis,
-                Genre = new GenreDto
-                {
-                    Id = genre.IdGenre,
-                    Name = genre.Name,
-                },
-                functions = movie.Functions.Select(f => new FunctionDto
-                {
-                    IdFuntion = f.IdFuntion,
-                    Date = DateOnly.FromDateTime(f.Date),
-                    Time = TimeOnly.FromTimeSpan(f.Time)
-                }).ToList()
-            };
+            GetMovie? movieDto = update ? movie.Mapper() : null;
 
             return movieDto;
         }

@@ -28,7 +28,7 @@ namespace NgCinema.Infraestructure.Querys
 
         public async Task<IEnumerable<Movie>> GetMovies()
         {
-            return await _context.Movies.Include(m => m.Genre).ToListAsync();
+            return await _context.Movies.Include(m => m.Genre).Include(f => f.Functions).ToListAsync();
         }
     }
 }

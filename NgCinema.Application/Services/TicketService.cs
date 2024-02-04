@@ -1,19 +1,18 @@
 ﻿using NgCinema.Application.DTOs;
-using NgCinema.Application.DTOs.Genre;
-using NgCinema.Application.DTOs.Movie;
 using NgCinema.Application.DTOs.Ticket;
 using NgCinema.Application.Exceptions;
 using NgCinema.Application.Interfaces.Commands;
 using NgCinema.Application.Interfaces.Querys;
 using NgCinema.Application.Interfaces.Services;
+using NgCinema.Application.Mapper;
 using NgCinema.Domain.Entities;
 
 namespace NgCinema.Application.Services
 {
     public class TicketService : ITicketService
     {
-        private readonly ITicketCommand _ticketCommand; 
-        private readonly IFunctionQuery _functionQuery; 
+        private readonly ITicketCommand _ticketCommand;
+        private readonly IFunctionQuery _functionQuery;
 
         public TicketService(ITicketCommand ticketCommand, IFunctionQuery functionQuery)
         {
@@ -55,35 +54,14 @@ namespace NgCinema.Application.Services
             if(!insert)
                 return null;
 
-           
-
             TicketDto ticketsList = new TicketDto()
             {
-                Tickets =  tickets.Select(t => new GetTicket()
+                Tickets = tickets.Select(t => new GetTicket()
                 {
                     IdTicket = t.IdTicket
                 }).ToList(),
-                Function = new GetFunction
-                {
-                    IdFuntion = function.IdFuntion,
-                    Movie = new MovieDto {
-                        IdMovie = function.IdMovie,
-                        Title = function.Movie.Title,
-                        Poster = function.Movie.Poster,
-                        Genre = new GenreDto {
-                            Id = function.Movie.Genre.IdGenre,
-                            Name = function.Movie.Genre.Name,
-                        }
-                    },
-                    Room = new GetRoom {
-                        IdRoom = function.IdRoom,
-                        Capacity = function.Room.Capacity,
-                        Name = function.Room.Name
-                    },
-                    Date = DateOnly.FromDateTime(function.Date),
-                    Time = TimeOnly.FromTimeSpan(function.Time)
-                },
-                User = createTicket.User
+                Function = function.Convert(),
+                User = tickets.FirstOrDefault().User
             };
 
             return ticketsList;
